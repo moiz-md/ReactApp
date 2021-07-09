@@ -6,12 +6,6 @@ export default class productlist extends Component {
     return (
       <>
         <div>
-          <div className="feature">
-            <h1>Feature Products</h1>
-          </div>
-          <div className="border">
-            <hr style={{ weight: 5, color: "cyan" }} />
-          </div>
           <Product />
         </div>
       </>

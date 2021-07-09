@@ -4,21 +4,26 @@ import React from "react";
 export default function Product() {
   return (
     <>
-      <div className="col-6 col-sm-6 col-lg-4">
-        <img
+    <figure>
+    <img
           className="product1"
           src={process.env.PUBLIC_URL + "/assets/product-image-1.png"}
         />
-      </div>
-      <div className="PD">
-        <h3>SoftLand</h3>
+  <figcaption> <h3>SoftLand</h3>
         <h4>4,206 Downloads</h4>
         <p>
-          SOftland is a morden and creative app loading HTML website
-          template.Any one use this this template to showcase their app or
+          SOftland is a morden and creative app loading HTML website <br />
+          template.Any one use this this template to showcase their app or <br />
           service.SOftland is an ultimate.
-        </p>
-      </div>
+        </p></figcaption>
+</figure>
+
+      {/* <div className="col-6 col-sm-6 col-lg-4">
+        
+      </div> */}
+      {/* <div className="PD">
+       
+      </div> */}
     </>
   );
 }
