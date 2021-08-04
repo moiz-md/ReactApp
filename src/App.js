@@ -3,36 +3,41 @@ import React, { Component } from "react";
 // import Button from 'react-bootstrap/Button';
 // @import "~bootstrap/scss/bootstrap";
 // import "./App.css";
-import Banner from "./Navbar/Banner/banner";
-import Button from "./Navbar/Button/Button";
-// import "./Navbar/main.css";
-import Navbar from "./Navbar/navbar";
-import Productlist from "./Navbar/Product/productlist";
+import Banner from "./Navbar/Banner/banner.jsx";
+import Button from "./Navbar/Button/Button.jsx";
+import "./Navbar/main.css";
+import Navbar from "./Navbar/navbar.jsx";
+import Productlist from "./Navbar/Product/productlist.jsx";
 class App extends Component {
   render() {
     return (
-
       <div className="main-wrapper">
         {/* for navbar */}
         <div className="row">
-        <Navbar />
+          <Navbar />
         </div>
         {/* for banner */}
         <div className="row">
-        <Banner />
+          <Banner />
         </div>
-         {/* for feature product */}
-         <div className="row">
-         <Button />
-          </div>
-           {/* for content */}
+        {/* for feature product */}
+        {/* <div className="row">
+          <Button />
+        </div> */}
+        {/* for content */}
         <div className="row">
-          <div className="col"><Productlist /></div>
-          <div className="col"><Productlist /></div>
-          <div className="col"><Productlist /></div>
+          <div className="col">
+            <Productlist />
+          </div>
+          {/* <div className="col-sm-4">
+            <Productlist />
+          </div>
+          <div className="col-sm-4">
+            <Productlist />
+          </div> */}
         </div>
-
       </div>
+
       // <div className="App">
       //   <Navbar />
       //   <Banner />
