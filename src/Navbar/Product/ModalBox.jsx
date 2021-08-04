@@ -1,9 +1,37 @@
 import React, { Component } from "react";
 
 class ModalBox extends Component {
-  // constructor(props) {
-  //   super(props);
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {
+      productName: "",
+      place: "",
+      description: ""
+    };
+    this.handleInputChange = this.handleInputChange.bind(this);
+  }
+
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
+   
+  }
+
+  addPortalProduct(){
+  
+    console.log(this.state.productName,this.state.place,this.state.description)
+    this.setState({
+      productName:"",
+      place:"",
+      description:""
+    });
+  }
+
   render() {
     return (
       <div
@@ -29,35 +57,46 @@ class ModalBox extends Component {
               </button>
             </div>
             <div className="modal-body">
-              <form>
+              <form onSubmit={this.handleSubmit}>
                 <div className="form-group">
                   <label htmlFor="name" className="col-form-label">
                     Name:
-                  </label>
-                  <input
+                    <input
+                    name="productName"
                     type="text"
                     className="form-control"
                     id="recipient-name"
+                    value={this.state.productName}
+                    onChange={this.handleInputChange}
                   ></input>
+                  </label>
                 </div>
                 <div className="form-group">
                   <label htmlFor="place-name" className="col-form-label">
                     Place:
-                  </label>
-                  <input
+                    <input
+                    name="place"
                     type="text"
                     className="form-control"
                     id="recipient-name"
+                    value={this.state.place}
+                    onChange={this.handleInputChange}
                   ></input>
+                  </label>
+              
                 </div>
                 <div className="form-group">
                   <label htmlFor="message-text" className="col-form-label">
                     Description:
-                  </label>
-                  <textarea
+                    <textarea
+                    name="description"
                     className="form-control"
                     id="message-text"
+                    value={this.state.description}
+                    onChange={this.handleInputChange}
                   ></textarea>
+                  </label>
+               
                   {/* <!-- <input type="text" className="form-control" id="recipient-name"> --> */}
                 </div>
               </form>
