@@ -1,41 +1,69 @@
-import React, { Component } from "react";
+import React, { Component, createRef } from "react";
+import productImage1 from "./../../assets/product-image-1.png";
 
 class ModalBox extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      productName: "",
-      place: "",
-      description: ""
-    };
-    this.handleInputChange = this.handleInputChange.bind(this);
-  }
+    this.inputRefName = createRef();
+    this.inputRefPlace = createRef();
+    this.inputRefDownload = createRef();
+    this.inputRefDesription = createRef();
+    //   this.state = {
+    //     productName: "",
+    //     place: "",
+    //     description: "",
+    //   };
+    //   this.handleInputChange = this.handleInputChange.bind(this);
+    // }
 
-  handleInputChange(event) {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
+    // handleInputChange(event) {
+    //   const target = event.target;
+    //   const value = target.type === "checkbox" ? target.checked : target.value;
+    //   const name = target.name;
 
-    this.setState({
-      [name]: value
-    });
-   
-  }
+    //   this.setState({
+    //     [name]: value,
+    //   });
+    // }
 
-  addPortalProduct(){
-  
-    console.log(this.state.productName,this.state.place,this.state.description)
-    this.setState({
-      productName:"",
-      place:"",
-      description:""
-    });
+    // addPortalProduct() {
+    //   console.log(
+    //     this.state.productName,
+    //     this.state.place,
+    //     this.state.description
+    //   );
+    //   this.setState({
+    //     productName: "",
+    //     place: "",
+    //     description: "",
+    //   });
   }
+  addPortalProduct = (e) => {
+    e.preventDefault()
+    // this.inputRef.current.value;
+    // const handleSubmit = (e) => {
+    //   e.preventDefault();
+    const portalDataName = this.inputRefName.current.value;
+    const portalDataPlace = this.inputRefPlace.current.value;
+    const portalDataDowmload = this.inputRefDownload.current.value;
+    const portalDataDes = this.inputRefDesription.current.value;
+
+    const newProduct={
+      Name: portalDataName, 
+      Place:portalDataPlace,
+      Downloads:portalDataDowmload,
+      Description: portalDataDes,
+      Image: productImage1
+    }
+    this.props.addProduct(newProduct)
+
+    console.log(portalDataName, portalDataPlace, portalDataDes);
+  };
 
   render() {
     return (
       <div
-        className="modal fade"
+        className="modal fade "
         id="addProductModal"
         role="dialog"
         aria-labelledby="exampleModalLabel"
@@ -61,42 +89,58 @@ class ModalBox extends Component {
                 <div className="form-group">
                   <label htmlFor="name" className="col-form-label">
                     Name:
-                    <input
+                  </label>
+                  <input
                     name="productName"
                     type="text"
                     className="form-control"
-                    id="recipient-name"
-                    value={this.state.productName}
-                    onChange={this.handleInputChange}
+                    // id="recipient-name"
+                    // value={this.state.productName}
+                    // onChange={this.handleInputChange}
+                    ref={this.inputRefName}
                   ></input>
-                  </label>
                 </div>
                 <div className="form-group">
                   <label htmlFor="place-name" className="col-form-label">
                     Place:
-                    <input
+                  </label>
+                  <input
                     name="place"
                     type="text"
                     className="form-control"
-                    id="recipient-name"
-                    value={this.state.place}
-                    onChange={this.handleInputChange}
+                    // id="recipient-name"
+                    // value={this.state.place}
+                    // onChange={this.handleInputChange}
+                    ref={this.inputRefPlace}
                   ></input>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="place-name" className="col-form-label">
+                    Downloads
                   </label>
-              
+                  <input
+                    name="Downloads"
+                    type="text"
+                    className="form-control"
+                    // id="recipient-name"
+                    // value={this.state.place}
+                    // onChange={this.handleInputChange}
+                    ref={this.inputRefDownload}
+                  ></input>
                 </div>
                 <div className="form-group">
                   <label htmlFor="message-text" className="col-form-label">
                     Description:
-                    <textarea
+                  </label>
+                  <textarea
                     name="description"
                     className="form-control"
-                    id="message-text"
-                    value={this.state.description}
-                    onChange={this.handleInputChange}
+                    // id="message-text"
+                    // value={this.state.description}
+                    // onChange={this.handleInputChange}
+                    ref={this.inputRefDesription}
                   ></textarea>
-                  </label>
-               
+
                   {/* <!-- <input type="text" className="form-control" id="recipient-name"> --> */}
                 </div>
               </form>
@@ -106,7 +150,7 @@ class ModalBox extends Component {
                   type="button"
                   className="btn btn-primary"
                   data-dismiss="modal"
-                  onClick={() => this.addPortalProduct()}
+                  onClick={(e) => this.addPortalProduct(e)}
                 >
                   Add
                 </button>

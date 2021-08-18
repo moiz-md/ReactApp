@@ -103,10 +103,21 @@ class productlist extends Component {
       shouldPortalOpen: false,
     });
   };
+
   shouldPortalOpen = () => {
     this.setState({
       shouldPortalOpen: true,
     });
+  };
+
+  state = {
+    PortalData: [
+      {
+        Name: `${this.props.portalDataName}`,
+        Place: `${this.props.portalDataPlace}`,
+        Description: `${this.props.portalDataDes}`,
+      },
+    ],
   };
 
   // componentDidMount() {
@@ -121,19 +132,16 @@ class productlist extends Component {
   // };
   // // }
 
-  // addProduct = (addPortalProduct) => {
-  //   const prodLengthPortal = this.state.ProductDeatails.length;
-  //   const PortalProduct = {
-  //     Id: `${prodLengthPortal}`,
-  //     Name: `${addPortalProduct.Name} ${prodLengthPortal + 1}`,
-  //     Downloads: `${addPortalProduct.Downloads} ${prodLengthPortal + 1}`,
-  //     Image: addPortalProduct.Image,
-  //     Description: `${addPortalProduct.Description} ${prodLengthPortal + 1}`,
-  //   };
-  //   console.log();
-  // };
-  addPortalProduct = () => {
-    this.inputRef.current.Id = "5";
+  addProduct = (addPortalProduct) => {
+    const prodLengthPortal = this.state.ProductDeatails.length;
+    const PortalProduct = {
+      Id: `${prodLengthPortal}`,
+      Name: `${addPortalProduct.Name} ${prodLengthPortal + 1}`,
+      Downloads: `${addPortalProduct.Downloads} ${prodLengthPortal + 1}`,
+      Image: addPortalProduct.Image,
+      Description: `${addPortalProduct.Description} ${prodLengthPortal + 1}`,
+    };
+    console.log();
   };
 
   render() {
@@ -162,7 +170,7 @@ class productlist extends Component {
               </button>
               {this.state.shouldPortalOpen ? (
                 <PortalComponent>
-                  <ModalBox addProductModal={this.addProduct}></ModalBox>
+                  <ModalBox addProduct={this.product}></ModalBox>
                 </PortalComponent>
               ) : null}
             </div>
@@ -173,7 +181,7 @@ class productlist extends Component {
             return (
               <Product
                 //onClickRemove={() => this.UpdateData.bind()}
-                onClick={this.RemoveData.bind(this, product.Id)}
+                click={this.RemoveData.bind(this, product.Id)}
                 key={product.Id}
                 value={product}
               />

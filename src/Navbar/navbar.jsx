@@ -1,6 +1,7 @@
 import { logDOM } from "@testing-library/react";
 import React from "react";
 import logo from "./assets/logo.png";
+import { Link, Route, Router, Switch } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -24,9 +25,9 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item active">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="/home">
                   Home <span className="sr-only"></span>
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">
@@ -59,6 +60,14 @@ function Navbar() {
         </nav>
       </div>
     </>
+  );
+}
+function Homez() {
+  return (
+    <div>
+      <h1>Home Page</h1>
+      <p>This is my Page</p>
+    </div>
   );
 }
 

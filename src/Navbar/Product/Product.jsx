@@ -24,7 +24,7 @@ export default function Product(props) {
           <button
             type="button"
             className="btn btn-lg btn-layout"
-            onClick={props.onClick}
+            onClick={props.click}
           >
             <i className="fa fa-trash" aria-hidden="true"></i> Delete
           </button>

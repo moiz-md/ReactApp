@@ -8,13 +8,16 @@ import Button from "./Navbar/Button/Button.jsx";
 import "./Navbar/main.css";
 import Navbar from "./Navbar/navbar.jsx";
 import Productlist from "./Navbar/Product/productlist.jsx";
+import { Link, Route, Router, Switch } from "react-router-dom";
 class App extends Component {
   render() {
     return (
       <div className="main-wrapper">
         {/* for navbar */}
         <div className="row">
-          <Navbar />
+          <Router path="/" Component={Homez}>
+            <Navbar />
+          </Router>
         </div>
         {/* for banner */}
         <div className="row">
@@ -50,5 +53,14 @@ class App extends Component {
 }
 
 const name = "Ansari Moiz";
+
+function Homez() {
+  return (
+    <div>
+      <h1>Home Page</h1>
+      <p>This is my Page</p>
+    </div>
+  );
+}
 
 export default App;
