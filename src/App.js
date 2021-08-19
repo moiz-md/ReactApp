@@ -3,64 +3,43 @@ import React, { Component } from "react";
 // import Button from 'react-bootstrap/Button';
 // @import "~bootstrap/scss/bootstrap";
 // import "./App.css";
-import Banner from "./Navbar/Banner/banner.jsx";
-import Button from "./Navbar/Button/Button.jsx";
-import "./Navbar/main.css";
-import Navbar from "./Navbar/navbar.jsx";
-import Productlist from "./Navbar/Product/productlist.jsx";
-import { Link, Route, Router, Switch } from "react-router-dom";
-class App extends Component {
-  render() {
+import Banner from "./Atom/Banner/banner";
+
+import Navbar from "./Atom/Navbar/navbar.jsx";
+import Productlist from "./Product/productlist.jsx";
+import { Route } from "react-router-dom";
+import Footer from "./Atom/Footer/footer";
+import Mainlayout from "./Molecule/Mainlayout/mainlayout";
+import ActionButton from "./Atom/ActionButton/actionbutton";
+import ProductCard from "./Molecule/ProductCard/productcard";
+import ProductList from "./Organism/ProductList/productlist";
+const App = () => {
+
     return (
-      <div className="main-wrapper">
-        {/* for navbar */}
-        <div className="row">
-          <Router path="/" Component={Homez}>
-            <Navbar />
-          </Router>
-        </div>
-        {/* for banner */}
-        <div className="row">
-          <Banner />
-        </div>
-        {/* for feature product */}
-        {/* <div className="row">
-          <Button />
-        </div> */}
-        {/* for content */}
-        <div className="row">
-          <div className="col">
-            <Productlist />
-          </div>
-          {/* <div className="col-sm-4">
-            <Productlist />
-          </div>
-          <div className="col-sm-4">
-            <Productlist />
-          </div> */}
-        </div>
+      // <div className="main-wrapper">
+      //   <div className="row">
+      //     <Route path="/" Component={Homez} />
+      //       <Navbar />
+      //   </div>
+      //   <div className="row">
+      //     <Banner />
+      //   </div>
+      //   <div className="row">
+      //     <div className="col">
+      //       <Productlist />
+      //     </div>
+      //   </div>
+      //   <Footer/>
+      // </div>
+      <div>
+       <Navbar />
+       <Banner/>
+    
+     <ProductList/>
+       <Footer /> 
       </div>
 
-      // <div className="App">
-      //   <Navbar />
-      //   <Banner />
-      //   <Button />
-      //   <Productlist />
-      //   {/* <h1>Learn React {name}</h1> */}
-      // </div>
     );
-  }
-}
-
-const name = "Ansari Moiz";
-
-function Homez() {
-  return (
-    <div>
-      <h1>Home Page</h1>
-      <p>This is my Page</p>
-    </div>
-  );
 }
 
 export default App;

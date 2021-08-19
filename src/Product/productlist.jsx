@@ -1,11 +1,10 @@
 import React, { Component, createRef } from "react";
 import Product from "./Product.jsx";
-import productImage1 from "./../../assets/product-image-1.png";
-import productImage2 from "./../../assets/product-image-2.png";
-import productImage3 from "./../../assets/product-image-3.png";
-import Button from "./../Button/Button";
-import ModalBox from "../Product/ModalBox";
-import PortalComponent from "../Product/PortalComponent";
+import productImage1 from "../assets/product-image-1.png";
+import productImage2 from "../assets/product-image-2.png";
+import productImage3 from "../assets/product-image-3.png";
+import ModalBox from "./ModalBox";
+import PortalComponent from "./PortalComponent";
 
 class productlist extends Component {
   constructor(props) {
@@ -134,13 +133,13 @@ class productlist extends Component {
 
   addProduct = (addPortalProduct) => {
     const prodLengthPortal = this.state.ProductDeatails.length;
-    const PortalProduct = {
-      Id: `${prodLengthPortal}`,
-      Name: `${addPortalProduct.Name} ${prodLengthPortal + 1}`,
-      Downloads: `${addPortalProduct.Downloads} ${prodLengthPortal + 1}`,
-      Image: addPortalProduct.Image,
-      Description: `${addPortalProduct.Description} ${prodLengthPortal + 1}`,
-    };
+    // const PortalProduct = {
+    //   Id: `${prodLengthPortal}`,
+    //   Name: `${addPortalProduct.Name} ${prodLengthPortal + 1}`,
+    //   Downloads: `${addPortalProduct.Downloads} ${prodLengthPortal + 1}`,
+    //   Image: addPortalProduct.Image,
+    //   Description: `${addPortalProduct.Description} ${prodLengthPortal + 1}`,
+    // };
     console.log();
   };
 

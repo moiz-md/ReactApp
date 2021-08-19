@@ -1,5 +1,5 @@
 import React, { Component, createRef } from "react";
-import productImage1 from "./../../assets/product-image-1.png";
+import productImage1 from "../assets/product-image-1.png";
 
 class ModalBox extends Component {
   constructor(props) {

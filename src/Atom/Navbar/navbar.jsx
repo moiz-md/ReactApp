@@ -1,14 +1,13 @@
-import { logDOM } from "@testing-library/react";
-import React from "react";
-import logo from "./assets/logo.png";
-import { Link, Route, Router, Switch } from "react-router-dom";
 
+import React from "react";
+import { Link } from "react-router-dom";
+import logo from '../../assets/logo.png'
+import "./navbar.css";
 function Navbar() {
   return (
     <>
       <div className="navbar-nav">
         <nav className="navbar navbar-expand-lg navbar-light bg-custom ">
-          {/* <a className="navbar-brand" href="#">ALLIANCEINDUSTRIES</a> */}
           <img src={logo} alt="logo" />
           <button
             className="navbar-toggler"
@@ -60,14 +59,6 @@ function Navbar() {
         </nav>
       </div>
     </>
-  );
-}
-function Homez() {
-  return (
-    <div>
-      <h1>Home Page</h1>
-      <p>This is my Page</p>
-    </div>
   );
 }
 
