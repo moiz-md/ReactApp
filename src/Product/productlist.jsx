@@ -3,6 +3,7 @@ import Product from "./Product.jsx";
 import productImage1 from "../assets/product-image-1.png";
 import productImage2 from "../assets/product-image-2.png";
 import productImage3 from "../assets/product-image-3.png";
+
 import ModalBox from "./ModalBox";
 import PortalComponent from "./PortalComponent";
 

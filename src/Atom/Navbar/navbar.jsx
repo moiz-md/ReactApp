@@ -1,7 +1,6 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from '../../assets/logo.png'
+import logo from "../../assets/logo.png";
 import "./navbar.css";
 function Navbar() {
   return (
@@ -9,6 +8,9 @@ function Navbar() {
       <div className="navbar-nav">
         <nav className="navbar navbar-expand-lg navbar-light bg-custom ">
           <img src={logo} alt="logo" />
+          {/* <a className="navbar-brand" href="#">
+            Microtech
+          </a> */}
           <button
             className="navbar-toggler"
             type="button"
@@ -20,39 +22,33 @@ function Navbar() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item active">
-                <Link className="nav-link" to="/home">
+                <Link className="nav-link" to="/">
                   Home <span className="sr-only"></span>
                 </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="/about">
                   About
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  License
-                </a>
+                <Link className="nav-link" to="/Contact">
+                  Contact
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="/Support">
                   Support
-                </a>
+                </Link>
               </li>
 
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Contact <span className="glyphicon glyphicon-user"></span>
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Members <span className="glyphicon glyphicon-search"></span>
-                </a>
+                <Link className="nav-link" to="/Feedback">
+                  Feedback
+                </Link>
               </li>
             </ul>
           </div>

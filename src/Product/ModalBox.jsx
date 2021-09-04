@@ -39,7 +39,7 @@ class ModalBox extends Component {
     //   });
   }
   addPortalProduct = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     // this.inputRef.current.value;
     // const handleSubmit = (e) => {
     //   e.preventDefault();
@@ -48,14 +48,14 @@ class ModalBox extends Component {
     const portalDataDowmload = this.inputRefDownload.current.value;
     const portalDataDes = this.inputRefDesription.current.value;
 
-    const newProduct={
-      Name: portalDataName, 
-      Place:portalDataPlace,
-      Downloads:portalDataDowmload,
+    const newProduct = {
+      Name: portalDataName,
+      Place: portalDataPlace,
+      Downloads: portalDataDowmload,
       Description: portalDataDes,
-      Image: productImage1
-    }
-    this.props.addProduct(newProduct)
+      Image: productImage1,
+    };
+    this.props.addProduct(newProduct);
 
     console.log(portalDataName, portalDataPlace, portalDataDes);
   };

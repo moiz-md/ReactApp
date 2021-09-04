@@ -1,14 +1,11 @@
 import React from "react";
 import "./Banner.css";
-import img2 from  "../../assets/intro-bg.png";
+import img2 from "../../assets/intro-bg.png";
 
 function Banner() {
   return (
     <div className="intro-bg">
-      <img
-        className="banner-size"
-        src={img2}
-      />
+      <img className="banner-size" src={img2} />
       <span className="textover-banner">
         <h4>Banner Title Comes Here</h4>
         <p>

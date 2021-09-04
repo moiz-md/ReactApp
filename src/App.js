@@ -14,32 +14,30 @@ import ActionButton from "./Atom/ActionButton/actionbutton";
 import ProductCard from "./Molecule/ProductCard/productcard";
 import ProductList from "./Organism/ProductList/productlist";
 const App = () => {
+  return (
+    // <div className="main-wrapper">
+    //   <div className="row">
+    //     <Route path="/" Component={Homez} />
+    //       <Navbar />
+    //   </div>
+    //   <div className="row">
+    //     <Banner />
+    //   </div>
+    //   <div className="row">
+    //     <div className="col">
+    //       <Productlist />
+    //     </div>
+    //   </div>
+    //   <Footer/>
+    // </div>
+    <div>
+      <Navbar />
+      <Banner />
 
-    return (
-      // <div className="main-wrapper">
-      //   <div className="row">
-      //     <Route path="/" Component={Homez} />
-      //       <Navbar />
-      //   </div>
-      //   <div className="row">
-      //     <Banner />
-      //   </div>
-      //   <div className="row">
-      //     <div className="col">
-      //       <Productlist />
-      //     </div>
-      //   </div>
-      //   <Footer/>
-      // </div>
-      <div>
-       <Navbar />
-       <Banner/>
-    
-     <ProductList/>
-       <Footer /> 
-      </div>
-
-    );
-}
+      <ProductList />
+      <Footer />
+    </div>
+  );
+};
 
 export default App;
